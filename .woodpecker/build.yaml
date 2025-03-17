@@ -1,4 +1,15 @@
 when:
-  - event: tag
+  - event: push
     branch: main
+clone:
+  - name: git
+    image: woodpeckerci/plugin-git
+    settings:
+      path: ./plugin/
 steps:
+  - name: Build
+    image: docker
+    commands:
+      - docker run --rm -e BUILD_PLUGIN=HhagInquiry -v $(PWD)/plugin/:/var/www/html/custom/plugins/HhagInquiry dockware/dev:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
