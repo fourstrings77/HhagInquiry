@@ -6,6 +6,7 @@ clone:
     image: woodpeckerci/plugin-git
     settings:
       path: ./plugin/
+
 steps:
   - name: Build
     image: docker
