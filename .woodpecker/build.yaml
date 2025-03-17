@@ -1,0 +1,4 @@
+when:
+  - event: tag
+    branch: main
+steps:
