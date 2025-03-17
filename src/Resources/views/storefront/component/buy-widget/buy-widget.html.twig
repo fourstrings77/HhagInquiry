@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget_buy_form %}
+    {{ parent() }}
+    <div class="product-detail-form-container">
+        <button class="btn btn-secondary w-100"
+                data-ajax-modal="true"
+                data-url="/widgets/cms/0191c12dcd567250a533195ecade95a1"
+
+        >Add inquiry</button>
+    </div>
+{% endblock %}

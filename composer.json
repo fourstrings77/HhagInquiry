@@ -1,0 +1,46 @@
+{
+  "name": "hhag/inquiry",
+  "description": "Very useful plugin",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Hauke"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~8.3.4",
+    "phpstan/phpstan": "^0.12.18",
+    "shopware/core": "*",
+    "shopware/storefront": "*"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "HhagInquiry\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "HhagInquiry\\HhagInquiry",
+    "copyright": "Hauke",
+    "label": {
+      "de-DE": "HhagInquiry",
+      "en-GB": "HhagInquiry"
+    },
+    "description": {
+      "de-DE": "Very useful plugin",
+      "en-GB": "Very useful plugin"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://acme.org",
+      "en-GB": "https://acme.org"
+    },
+    "supportLink": {
+      "de-DE": "https://acme.org",
+      "en-GB": "https://acme.org"
+    }
+  }
+}
