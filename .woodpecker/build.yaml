@@ -26,5 +26,4 @@ steps:
     settings:
         files:
           - HhagInquiry.zip
-        api_key:
-          from_secret: ACCESS_TOKEN
+        api_key: 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
