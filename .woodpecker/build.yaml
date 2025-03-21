@@ -20,7 +20,6 @@ steps:
     commands:
       - cd $(PWD)/plugins
       - zip -r ../HhagInquiry.zip .
-      -
   - name: Publish
     image: woodpeckerci/plugin-release
     settings:
