@@ -2,7 +2,7 @@
 
 namespace HhagInquiry\Content\Inquiry\Mapping;
 
-use HhagInquiry\Content\Inquiry\InquiryEntityDefinition;
+use HhagInquiry\Content\Inquiry\InquiryDefinition;
 use Shopware\Core\Content\Product\ProductDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\FkField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
@@ -24,10 +24,10 @@ class InquiryProductDefinition extends MappingEntityDefinition
     protected function defineFields(): FieldCollection
     {
         return new FieldCollection([
-            (new FkField('inquiry_id', 'inquiryId', InquiryEntityDefinition::class))->addFlags(new PrimaryKey(), new Required()),
+            (new FkField('inquiry_id', 'inquiryId', InquiryDefinition::class))->addFlags(new PrimaryKey(), new Required()),
             (new FkField('product_id', 'productId', ProductDefinition::class))->addFlags(new PrimaryKey(), new Required()),
 
-            new ManyToOneAssociationField('inquiry', 'inquiry_id', InquiryEntityDefinition::class, 'id'),
+            new ManyToOneAssociationField('inquiry', 'inquiry_id', InquiryDefinition::class, 'id'),
             new ManyToOneAssociationField('product', 'product_id', ProductDefinition::class, 'id'),
         ]);
     }

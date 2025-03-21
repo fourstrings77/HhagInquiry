@@ -2,7 +2,7 @@
 
 namespace HhagInquiry\Content\Inquiry;
 
-class InquiryEntityCollection
+class InquiryCollection
 {
 
 }

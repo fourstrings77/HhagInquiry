@@ -2,7 +2,7 @@ when:
   - event: push
     branch: main
 clone:
-  - name: git
+  - name: Checkout
     image: woodpeckerci/plugin-git
     settings:
       path: ./plugin/

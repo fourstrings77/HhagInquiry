@@ -3,8 +3,6 @@
 namespace HhagInquiry\Content\Inquiry;
 
 use HhagInquiry\Content\Inquiry\Mapping\InquiryProductDefinition;
-use Shopware\Core\Checkout\Customer\CustomerDefinition;
-use Shopware\Core\Checkout\Customer\CustomerEntity;
 use Shopware\Core\Content\Product\ProductDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\AutoIncrementField;
@@ -23,7 +21,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shopware\Core\System\NumberRange\DataAbstractionLayer\NumberRangeField;
 use Shopware\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateDefinition;
 
-class InquiryEntityDefinition extends EntityDefinition
+class InquiryDefinition extends EntityDefinition
 {
     public const ENTITY_NAME = 'hhag_inquiry';
     public function getEntityName(): string
