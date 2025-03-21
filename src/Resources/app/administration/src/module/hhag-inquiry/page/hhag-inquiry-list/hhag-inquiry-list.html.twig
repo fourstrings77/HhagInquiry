@@ -1,0 +1,18 @@
+{% block hhag_inquiry_base %}
+    <sw-page class="hhag-inquiry">
+
+        <template #content>
+            <sw-card-view>
+                <sw-data-grid
+                    detail-route="hhag.inquiry.detail"
+                    :columns="inquiryColumns"
+                    :items="inquiries"
+                >
+                </sw-data-grid>
+
+            </sw-card-view>
+        </template>
+    </sw-page>
+
+
+{% endblock %}

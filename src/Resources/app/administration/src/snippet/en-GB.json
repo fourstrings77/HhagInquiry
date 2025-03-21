@@ -1,0 +1,14 @@
+{
+    "hhag-inquiry": {
+        "general": {
+            "mainMenuItemGeneral": "Inquiries",
+            "descriptionTextModule": "Manage inquiries"
+        },
+        "list": {
+            "colInquiryNumber": "Number",
+            "colInquiryDate": "Date",
+            "colInquiryName": "Name",
+            "colInquiryState": "State"
+        }
+    }
+}

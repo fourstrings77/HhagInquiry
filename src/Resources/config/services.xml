@@ -5,5 +5,14 @@
            xsi:schemaLocation="https://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="HhagInquiry\Content\Extension\Product">
+            <tag name="shopware.entity.extension" />
+        </service>
+        <service id="HhagInquiry\Content\Inquiry\InquiryDefinition">
+            <tag name="shopware.entity.definition" entity="hhag_inquiry" />
+        </service>
+        <service id="HhagInquiry\Content\Inquiry\Mapping\InquiryProductDefinition">
+            <tag name="shopware.entity.definition" entity="hhag_inquiry_product" />
+        </service>
     </services>
 </container>

@@ -2,6 +2,10 @@
 
 namespace HhagInquiry;
 
+use HhagInquiry\Install\Installer;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\Plugin\Context\ActivateContext;
 use Shopware\Core\Framework\Plugin\Context\DeactivateContext;
 use Shopware\Core\Framework\Plugin;
@@ -9,11 +13,17 @@ use Shopware\Core\Framework\Plugin\Context\InstallContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
 use Shopware\Core\Framework\Plugin\Context\UpdateContext;
+use Shopware\Core\Framework\Uuid\Uuid;
+use Shopware\Core\System\NumberRange\Aggregate\NumberRangeType\NumberRangeTypeEntity;
+use Shopware\Core\System\NumberRange\NumberRangeEntity;
+
 class HhagInquiry extends Plugin
 {
     public function install(InstallContext $installContext): void
     {
-        // Do stuff such as creating a new payment method
+        $installer = new Installer($this->container, $installContext->getContext());
+        $installer->createInquiryStates();
+        $installer->createInquiryNumberrange();
     }
 
     public function uninstall(UninstallContext $uninstallContext): void
@@ -23,8 +33,6 @@ class HhagInquiry extends Plugin
         if ($uninstallContext->keepUserData()) {
             return;
         }
-
-        // Remove or deactivate the data created by the plugin
     }
 
     public function activate(ActivateContext $activateContext): void
