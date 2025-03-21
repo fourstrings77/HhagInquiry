@@ -27,4 +27,4 @@ steps:
         files:
           - HhagInquiry.zip
         api_key:
-          from_secret: api_patgit
+          from_secret: api_pat
