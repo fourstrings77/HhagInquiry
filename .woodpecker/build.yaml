@@ -1,5 +1,5 @@
 when:
-  - event: push
+  - event: tag
     branch: main
 clone:
   - name: Checkout
@@ -14,3 +14,16 @@ steps:
       - docker run --rm -e BUILD_PLUGIN=HhagInquiry -v $(PWD)/plugin/:/var/www/html/custom/plugins/HhagInquiry dockware/dev:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+  - name: Create Zip
+    image: ubuntu
+    commands:
+      - cd $(PWD)/plugins
+      - zip -r ../HhagInquiry.zip .
+      -
+  - name: Publish
+    image: woodpeckerci/plugin-release
+    settings:
+        files:
+          - HhagInquiry.zip
+        api_key: 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
